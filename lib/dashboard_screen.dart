@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -77,6 +78,91 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
+              // Carousel Slider
+              CarouselSlider(
+                items: [
+                  // 1st Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: const AssetImage(
+                          'assets/images/school_see_banner.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  // 2nd Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: const AssetImage(
+                          'assets/images/school_see_banner.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  // 3rd Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: const AssetImage(
+                          'assets/images/school_see_banner.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  // 4th Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: const AssetImage(
+                          'assets/images/school_see_banner.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+
+                  // 5th Image of Slider
+                  Container(
+                    margin: EdgeInsets.all(6.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.0),
+                      image: DecorationImage(
+                        image: const AssetImage(
+                          'assets/images/school_see_banner.png',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ],
+                options: CarouselOptions(
+                  height: 180.0,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  aspectRatio: 16 / 9,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  viewportFraction: 0.8,
+                ),
+              ),
+              const SizedBox(height: 20),
               // Dashboard Items
               Expanded(
                 child: GridView.count(
@@ -108,13 +194,13 @@ class DashboardScreen extends StatelessWidget {
                       },
                     ),
                     _DashboardCard(
-                      title: 'Bus Tracking',
-                      icon: Icons.directions_bus,
+                      title: 'Attendance',
+                      icon: Icons.check_circle_outline,
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const BusTrackingScreen()),
+                              builder: (context) => const AttendanceScreen()),
                         );
                       },
                     ),
@@ -126,17 +212,6 @@ class DashboardScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const SchoolCalendarScreen()),
-                        );
-                      },
-                    ),
-                    _DashboardCard(
-                      title: 'Assignments',
-                      icon: Icons.assignment,
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AssignmentsScreen()),
                         );
                       },
                     ),
@@ -235,14 +310,14 @@ class FeeStatusScreen extends StatelessWidget {
   }
 }
 
-class BusTrackingScreen extends StatelessWidget {
-  const BusTrackingScreen({Key? key}) : super(key: key);
+class AttendanceScreen extends StatelessWidget {
+  const AttendanceScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Bus Tracking')),
-      body: const Center(child: Text('Bus Tracking Screen')),
+      appBar: AppBar(title: const Text('Attendance')),
+      body: const Center(child: Text('Attendance Screen')),
     );
   }
 }
